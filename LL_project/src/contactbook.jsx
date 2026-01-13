@@ -12,7 +12,6 @@ class ContactBook extends Component {
     };
   }
 
-  // Generic handler for all input fields
   handleInput = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -22,7 +21,7 @@ class ContactBook extends Component {
   addContact = () => {
     const { firstName, lastName, mobile } = this.state;
 
-    // Basic validation: ensure all fields have values
+  // Basic validation: ensure all fields have values
     if (
       firstName.trim() === "" ||
       lastName.trim() === "" ||
