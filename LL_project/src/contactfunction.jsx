@@ -13,4 +13,48 @@ export default function ContactBook() {
     setPhone("");
   };
 
-  
+  const deleteContact = (id) => {
+    setContacts(contacts.filter((contact) => contact.id !== id));
+  };
+
+  const toggleShowContact = (id) => {
+    setContacts(
+      contacts.map((contact) => {
+        if (contact.id === id) {
+          return { ...contact, visible: !contact.visible };
+        }
+      }),
+    );
+  };
+
+  return (
+    <>
+      <h2>📇 Contact Book</h2>
+      <input
+        type="text"
+        placeholder="Enter name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Enter phone number"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+      />
+      <button onClick={addContact}>Add</button>
+      <ul>
+        {contacts.map((contact) => (
+          <li key={contact.id}>
+            {contact.name}
+            {contact.visible ? <div>{contact.phone}</div> : ""}
+            <button onClick={() => toggleShowContact(contact.id)}>
+              {contact.visible ? "Hide Contact" : "View Contact"}
+            </button>
+            <button onClick={() => deleteContact(contact.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
