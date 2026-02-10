@@ -1,3 +1,53 @@
+.container {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container.dark-mode {
+  background-color: #222;
+  color: white;
+}
+
+.dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.dark-mode-btn:hover {
+  background-color: #555;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 .user-card {
     border: 1px solid #e0e0e0;
     border-radius: 12px;
